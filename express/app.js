@@ -7,7 +7,6 @@ const app = express();
 const checkJwt = require('express-jwt');
 const bcrypt = require('bcrypt');           
 var mongoose = require('mongoose')
-const pathToRegexp = require('path-to-regexp');
 app.use(express.static(path.join(__dirname, '../build')));
 
 /****** Configuration *****/
@@ -15,6 +14,7 @@ app.use(bodyParser.json());
 app.use(morgan('combined'));   
 
 const port = (process.env.PORT || 9000);
+
 console.log(process.env.JWT_SECRET)
 if (!process.env.JWT_SECRET) {
     console.error('You need to put a secret in the JWT_SECRET env variable!');
@@ -42,9 +42,6 @@ app.use((req, res, next) => {
         next();
     }
 });
-
-const server = app.listen(port,
-    () => console.log(`Some app running on port ${port}`));
 
 mongoose.connect(process.env.dbUrl, (err) => {
     console.log('Atlas Cluster connection errors =', err)
@@ -100,6 +97,6 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
   });
 
-  const server = app.listen(port,
+const server = app.listen(port,
     () => console.log(`TV APP API running on port ${port}!`));
 
