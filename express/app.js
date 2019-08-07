@@ -80,6 +80,7 @@ let openPaths = [
     "/api/programs",
     "/watchlist",
     "/newprogram",
+    "/newProgram",
     "/favicon.ico",
 ];
 
