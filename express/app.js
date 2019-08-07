@@ -21,6 +21,10 @@ if (!process.env.JWT_SECRET) {
     process.exit(1);
 }
 
+require('dotenv').config({
+    path: "../.env"
+})
+
 // Additional headers to avoid triggering CORS security errors in the browser
 // Read more: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
 app.use((req, res, next) => {
