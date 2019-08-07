@@ -18,10 +18,10 @@ export default class ProgramList extends Component {
         items.forEach((elm) => {
             currentPrograms.push(<React.Fragment>
                 <Link to={{ pathname: `/programs/${this.props.category}/${elm.channel}/${elm.title}` }}>
-                <div className="category">
-                    <h2>{elm.title}</h2>
-                    <p>{elm.schedule}</p>
-                </div>
+                    <div className="category">
+                        <h2>{elm.title}</h2>
+                        <p>{elm.schedule}</p>
+                    </div>
                 </Link>
                 <hr></hr>
             </React.Fragment>)
@@ -31,9 +31,7 @@ export default class ProgramList extends Component {
             return (
                 <React.Fragment>
                     <h1>{this.props.match.params.category}</h1>
-                    <br></br>
-                    <h3>Found following programs on {this.props.match.params.channel} </h3>                                         
-                    <br></br>
+                        <h3>Found following programs on {this.props.match.params.channel} </h3>                                         
                     <div>
                         {currentPrograms}
                     </div>

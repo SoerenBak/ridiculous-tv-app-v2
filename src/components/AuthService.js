@@ -60,10 +60,8 @@ class AuthService {
             'Content-Type': 'application/json'
         };
 
-        //if (this.loggedIn()) {
             headers['Authorization'] = 'Bearer ' + this.getToken()
-        //}
-
+            
         return fetch(url, {
             headers,
             ...options
