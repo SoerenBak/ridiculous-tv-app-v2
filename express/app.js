@@ -100,5 +100,6 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
   });
 
-//app.listen(port, () => console.log(`API running on port ${port}!`));
+  const server = app.listen(port,
+    () => console.log(`TV APP API running on port ${port}!`));
 
