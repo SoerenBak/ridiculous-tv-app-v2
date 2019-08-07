@@ -77,7 +77,6 @@ let openPaths = [
     "/api/programs",
     '/my_app',
     "/newprogram",
-    "/watchlist",
 ];
 
 app.use(
