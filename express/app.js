@@ -76,6 +76,7 @@ let openPaths = [
     "/api/programs/channels",
     "/api/programs",
     '/my_app',
+    "/newprogram",
 ];
 
 app.use(
