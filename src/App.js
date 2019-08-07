@@ -241,17 +241,15 @@ class App extends Component {
                         <footer>             
                             <div className="col-sm-12 no-pad">
                                 <p>User: {this.state.username} </p>
-                        
-                            <a href="/newProgram">                  
-                                <button className="btn btn-outline-dark btn-create">Create Program</button>
-                            </a>                         
-                        
-                            <form>
-                                <button type="submit" className="btn btn-outline-dark btn-create" onClick={this.handleLogout}>Logout</button>
-                            </form>
+                                    <a href="/newProgram">                  
+                                        <button className="btn btn-outline-dark btn-create">Create Program</button>
+                                    </a>                         
+                                        <form>
+                                            <button type="submit" className="btn btn-outline-dark btn-create" onClick={this.handleLogout}>Logout</button>
+                                        </form>
                             </div>
-                    </footer>   
-                </div>
+                        </footer>   
+                    </div>
                 </Router>
             </React.Fragment>
         );
