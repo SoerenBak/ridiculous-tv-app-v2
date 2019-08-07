@@ -65,7 +65,7 @@ app.use('/api/users', usersRouter);
 const programsRouter = require('./programs_router')(Programs);
 app.use('/api/programs', programsRouter)
 
-/* let openPaths = [
+let openPaths = [
     '/api/users/authenticate',  
     '/api/users/create',
     '/api/users/',  
@@ -83,8 +83,6 @@ app.use('/api/programs', programsRouter)
 app.use(
     checkJwt({ secret: process.env.JWT_SECRET }).unless({ path : openPaths})
 );
-
-*/
 
 app.use((err, req, res, next) => {
     if (err.name === 'UnauthorizedError') {
