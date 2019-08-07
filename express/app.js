@@ -66,18 +66,21 @@ const programsRouter = require('./programs_router')(Programs);
 app.use('/api/programs', programsRouter)
 
 let openPaths = [
-    '/api/users/authenticate',  
+    '/api/users/authenticate',    
     '/api/users/create',
-    '/api/users/',  
-    '/api/programs/channel',  
+    '/api/programs/channel',
+    '/api/programs/newCategory',    
+    '/my_app',
     '/api/programs/categories',
     "/programs/:category/:channel",
-    "programs/categories/channels",
+    'programs/categories/channels',
+    "/api/programs/newChannel",
     "/api/programs/channels",
+    "/api/programs/newProgram",
     "/api/programs",
-    '/my_app',
+    "/watchlist",
     "/newprogram",
-    "/watchlist"
+    "/favicon.ico",
 ];
 
 app.use(
