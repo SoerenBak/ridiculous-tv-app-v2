@@ -1,0 +1,74 @@
+body {
+    background-color: #3aafa9 !important;
+}
+
+.category {
+    background-color: #2b7a78;
+    border: 1px solid #def2f1;
+    padding: 20px;
+    margin: 25px 0px 25px 0px;
+}
+
+.channel {
+    background-color: #2b7a78;
+    border: 1px solid #def2f1;
+    padding: 20px;
+    margin: 25px 0px 25px 0px;
+}
+
+h1 {
+    color: #FEFFFF;
+    text-shadow: 2px 2px #17252A;
+}
+
+h2 {
+    color: #def2f1;
+    text-shadow: 2px 2px #17252A;
+}
+
+h3 {
+    color: #17252A;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000000;
+}
+
+p {
+    color: #FEFFFF;
+}
+
+.login-screen {
+    margin-top: 200px;
+    color: white;
+}
+
+.btn-create {
+    margin-bottom: 10px;
+}
+
+.intro {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-bottom: #17252A solid 1px;
+    padding-bottom: 20px;
+}
+
+footer {
+    margin: 50px 0px 50px 0px;
+}
+
+.no-pad {
+    padding: 0px !important;
+}
+
+label {
+    color: white;
+}
+
+.error {
+    color: red;
+    margin-top: 25px;
+    font-size: 3rem;
+}
