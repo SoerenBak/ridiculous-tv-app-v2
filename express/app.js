@@ -104,5 +104,5 @@ app.get('/*', (req, res) => {
 });
 
 
-//const server = app.listen(port, () => console.log(`TV APP API running on port ${port}!`));
+app.listen(port, () => console.log(`TV APP API running on port ${port}!`));
 
