@@ -38,6 +38,14 @@ class AuthService {
     }
 
     loggedIn() {
+        // TODO: Check if token is expired using 'jwt-decode'
+        // TODO: npm install jwt-decode https://medium.com/@romanchvalbo/how-i-set-up-react-and-node-with-json-web-token-for-authentication-259ec1a90352
+        /*
+        if (jwtDecode(token).exp < Date.now() / 1000) {
+            // Do something
+        }
+         */
+
         return (this.getToken() !== undefined);
     }
 
@@ -60,8 +68,10 @@ class AuthService {
             'Content-Type': 'application/json'
         };
 
+        //if (this.loggedIn()) {
             headers['Authorization'] = 'Bearer ' + this.getToken()
-            
+        //}
+
         return fetch(url, {
             headers,
             ...options
