@@ -8,7 +8,6 @@ class AuthService {
         this.auth_api_url = auth_api_url;
         this.fetch = this.fetch.bind(this);
         this.login = this.login.bind(this);
-        this.signup = this.signup.bind(this);
     }
 
     login(username, password) {
@@ -38,13 +37,6 @@ class AuthService {
     }
 
     loggedIn() {
-        // TODO: Check if token is expired using 'jwt-decode'
-        // TODO: npm install jwt-decode https://medium.com/@romanchvalbo/how-i-set-up-react-and-node-with-json-web-token-for-authentication-259ec1a90352
-        /*
-        if (jwtDecode(token).exp < Date.now() / 1000) {
-            // Do something
-        }
-         */
 
         return (this.getToken() !== undefined);
     }
