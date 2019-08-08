@@ -65,6 +65,40 @@ app.use('/api/users', usersRouter);
 const programsRouter = require('./programs_router')(Programs);
 app.use('/api/programs', programsRouter)
 
+let openPaths = [
+    '/api/users/authenticate',    
+    '/api/users/create',
+    '/api/programs/channel',
+    '/api/programs/newCategory',    
+    '/my_app',
+    '/api/programs/categories',
+    "/programs/:category/:channel",
+    'programs/categories/channels',
+    "/api/programs/newChannel",
+    "/api/programs/channels",
+    "/api/programs/newProgram",
+    "/api/programs",
+    "/watchlist",
+    "/newprogram",
+    "/newProgram",
+    "/favicon.ico",
+];
+
+app.use(
+    checkJwt({ secret: process.env.JWT_SECRET }).unless({ path : openPaths})
+);
+
+app.use((err, req, res, next) => {
+    if (err.name === 'UnauthorizedError') {
+        res.status(401).json({ error: err.message });
+    }
+});
+
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send({msg: 'Something broke!'})
+});
+
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
 });
