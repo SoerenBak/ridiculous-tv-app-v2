@@ -7,13 +7,14 @@ const app = express();
 const checkJwt = require('express-jwt');
 const bcrypt = require('bcrypt');           
 var mongoose = require('mongoose')
+const port = (process.env.PORT || 9000);
 app.use(express.static(path.join(__dirname, '../build')));
 
 /****** Configuration *****/
 app.use(bodyParser.json());
 app.use(morgan('combined'));   
 
-const port = (process.env.PORT || 9000);
+
 
 console.log(process.env.JWT_SECRET)
 if (!process.env.JWT_SECRET) {
@@ -102,7 +103,6 @@ app.use(function (err, req, res, next) {
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
 });
-
 
 app.listen(port, () => console.log(`TV APP API running on port ${port}!`));
 

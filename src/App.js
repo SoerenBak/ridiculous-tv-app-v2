@@ -143,7 +143,7 @@ class App extends Component {
 
     render() {
      
-       //let currentUser = localStorage.getItem("username")
+        let currentUser = localStorage.getItem("username")
         let token = this.state.token
         if (token === 'undefined' || token === "" || !token) {
             return (<Login res={this.state.res} loginToApp={this.loginToApp} />)
